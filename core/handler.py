@@ -16,9 +16,11 @@ class MyHandler:
             current_site, self.max_parsed_sites, current_index = d_info
             await to_thread(print, f'Парсим сайт: {current_site}\nИндекс текущего сайта: '+\
                 f'{current_index}\nСпарсили сайтов: {self.max_parsed_sites}\n')
-
             if self.md.process_done:
                 break
+        
+    async def __done_count_sites(self) -> None:
+        """ ## Уведомляет о завершении процесса """
         await to_thread(print, f'Всего спарсили сайтов: {self.max_parsed_sites}')
 
     async def __create_my_tasks(self) -> None:
@@ -28,6 +30,8 @@ class MyHandler:
 
         await downloading_task
         await check_task
+
+        await self.__done_count_sites()
 
     def start(self) -> None:
         """ ## Запускать весь процесс """
