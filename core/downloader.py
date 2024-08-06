@@ -1,4 +1,4 @@
-from typing import Any, List
+from typing import List
 
 from asyncio import Event
 from asyncio import to_thread, sleep
