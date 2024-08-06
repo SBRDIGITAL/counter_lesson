@@ -31,8 +31,7 @@ class MyHandler:
         await downloading_task
         await check_task
 
-        await self.__done_count_sites()
-
     def start(self) -> None:
         """ ## Запускать весь процесс """
         run(self.__create_my_tasks())
+        run(self.__done_count_sites())
