@@ -1,3 +1,8 @@
 # Пример работы с генератором, получение информации из другого класса асинхронно
 
-
+## Инструкция:
+1. Клонировать репозиторий любым удобным способом
+2. python -m venv .venv
+3. Винда: .venv\Scripts\activate | Linux source .venv/bin/activate
+4. pip install -r requirements.txt
+5. Запустить файл main.py

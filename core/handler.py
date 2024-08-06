@@ -1,9 +1,7 @@
-import traceback
-
 from asyncio import run, to_thread
 from asyncio.tasks import create_task
 
-from downloader import MyDownloader as MD
+from core.downloader import MyDownloader as MD
 
 
 class MyHandler:
@@ -32,13 +30,3 @@ class MyHandler:
     def start(self) -> None:
         """ ## Запускать весь процесс """
         run(self.__create_my_tasks())
-        
-
-if __name__ == "__main__":
-    try:
-        mh = MyHandler()
-        mh.start()
-        print(f'\nВесь процесс завершен')
-
-    except:
-        traceback.print_exc()
