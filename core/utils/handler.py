@@ -1,10 +1,15 @@
 from asyncio import run, to_thread
 from asyncio.tasks import create_task
 
-from core.downloader import MyDownloader as MD
+from core.utils.downloader import MyDownloader as MD
 
 
 class MyHandler:
+    """
+    ### Пример использования:
+    - mh = MyHandler()
+    - mh.start()
+    """
 
     def __init__(self) -> None:
         self.md = MD()
