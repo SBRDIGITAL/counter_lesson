@@ -13,9 +13,10 @@ class MyHandler:
     async def __check_updates(self) -> None:
         """ ## Проверяет обновления """
         async for d_info in self.md.get_updates():
-            current_site, self.max_parsed_sites = d_info
-            await to_thread(
-                print, f'Парсим сайт: {current_site}\nСайт №: {self.max_parsed_sites}\n')
+            current_site, self.max_parsed_sites, current_index = d_info
+            await to_thread(print, f'Парсим сайт: {current_site}\nИндекс текущего сайта: '+\
+                f'{current_index}\nСпарсили сайтов: {self.max_parsed_sites}\n')
+
             if self.md.process_done:
                 break
         await to_thread(print, f'Всего спарсили сайтов: {self.max_parsed_sites}')
